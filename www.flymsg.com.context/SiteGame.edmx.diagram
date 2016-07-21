@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a269347d0f146a2b26c5155e38bbe3b" Name="Diagram1" ShowGrid="true">
+        <EntityTypeShape EntityType="SiteGameModel.Evaluation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.Game" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.GameBBS" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.GameType" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.IpLog" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.PageTitleLink" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.SiteUser" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.V_GamesOrder" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteGameModel.V_UsersGames" Width="1.5" PointX="10.5" PointY="0.75" />
+        <EntityTypeShape EntityType="SiteGameModel.EvaluationDay" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SiteGameModel.EvaluationMonth" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SiteGameModel.EvaluationWeek" Width="1.5" PointX="4.75" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

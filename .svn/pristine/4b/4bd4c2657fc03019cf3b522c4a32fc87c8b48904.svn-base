@@ -1,0 +1,79 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        <a href="/Games/Games/Create">Create New</a>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                列表图片
+            </th>
+            <th>
+                推广图片
+            </th>
+            <th>
+                排序顺序
+            </th>
+            <th>
+                主体文件引用路径
+            </th>
+            <th>
+                游戏作者
+            </th>
+            <th>
+                标题
+            </th>
+            <th>
+                操作类型
+            </th>
+            <th>
+                简介
+            </th>
+            <th>
+                标签
+            </th>
+            <th>
+                游戏类型
+            </th>
+            <th>
+                备注
+            </th>
+            <th>
+                是否展示
+            </th>
+            <th>
+                创建时间
+            </th>
+            <th>
+                创建用户
+            </th>
+            <th>
+                修改时间
+            </th>
+            <th>
+                修改用户
+            </th>
+            <th></th>
+        </tr>
+    
+    
+    </table>
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"0192916454b6415389526de22ba74676"}
+</script>
+<script type="text/javascript" src="http://localhost:13321/1360d7eb8eb84e22a7cb033a983a78d9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

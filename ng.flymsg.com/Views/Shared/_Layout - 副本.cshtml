@@ -1,0 +1,167 @@
+﻿@using System.Xml.Linq
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/index.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link href="~/Content/css/css.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+            </div>
+            <div id="header_choose" class="navbar-collapse collapse" ng-controller="header_nav" style="width:100%;">
+                @{
+                    var doc = Html.AppXML();
+                    var parent_eles = doc.Element("root").Elements();
+                    Dictionary<string, IEnumerable<XElement>> in_eles = new Dictionary<string, IEnumerable<XElement>>();
+                }
+                @*<ul class="nav navbar-nav">
+                        @if (parent_eles.Count() > 0)
+                        {
+                            foreach (var item in parent_eles)
+                            {
+                                <li>
+                                    <a ng-data-id="@item.Attribute("name").Value" ng-click="hideCro()">
+                                        @item.Attribute("title").Value
+                                    </a>
+                                </li>
+                                if (item.HasElements)
+                                {
+                                    in_eles.Add(item.Attribute("name").Value, item.Elements());
+                                }
+                            }
+                        }
+                    </ul>*@
+                @*@if (in_eles.Count > 0)
+                    {
+                        foreach (var in_item in in_eles)
+                        {
+                            <div id="@in_item.Key" class="ng-hidea">
+                                <div class="tag">
+                                    <em></em>
+                                    @if (in_item.Value.Count() > 0)
+                                    {
+                                        foreach (var sub_item in in_item.Value)
+                                        {
+                                            <button>@sub_item.Value</button>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }*@
+                <ul class="nav navbar-nav">
+                    <li ng-repeat="nav in navs">
+                        <a ng-data-id="{{nav.name}}" ng-click="hideCro(nav.name)" ng-class="{conAction : conName == nav.name}" ng-bind="nav.title">
+
+                        </a>
+                    </li>
+                </ul>
+                <div ng-repeat="nav in navs track by nav.name" id="{{nav.name}}" class="ng-hidea">
+                    <div class="tag">
+                        <em></em>
+                        <button ng-repeat="item in nav.items" ng-bind="item.text"></button>
+                    </div>
+                </div>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" ng-controller="html_body">
+        <div class="banner"></div>
+        <div class="labelx">&nbsp;</div>
+        @RenderBody()
+        <hr style="display:none;" />
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        var ng_html = angular.module("myapp", ['ngAnimate']);
+        ng_html.factory("facToggleMenu", function () {
+            var factory = {};
+            factory.func = function (s, id, $timeout) {
+                if (!id)
+                    return;
+
+                if (s.custom) {
+                    $("#" + id).css("top", $(event.target).offset().top);
+                    $("#" + id).css("left", $(event.target).offset().left);
+                    $(".tag em").css("left", 15);
+                    $("#" + id).css("width", "auto").css("height", "auto");
+                    $("#" + id).show().animate({
+                        top: $(".navbar-fixed-top").height(),
+                        left: $(event.target).offset().left,
+                        width: $("#" + id).width() + 15,
+                        height: $("#" + id).height()
+                    }, 300);
+                } else {
+                    $("#" + id).animate({
+                        top: -1 * $("#" + id).height(),
+                        width: 0,
+                        height: 0
+                    }, 300);
+                    $timeout(function () {
+                        $("#" + id).hide();
+                    }, 140);
+                }
+            };
+            return factory;
+        });
+
+        function routeConfig($routeProvider) {
+            $routeProvider.when("/", {
+                controller: bodyController,
+                templateUrl: "@Url.Action("Index", "Home")"
+            }).when("/Converter", {
+                controller: bodyController,
+                templateUrl: "@Url.Action("Index", "Converter")"
+            }).otherwise({
+                redirectTo: "/"
+            });
+        }
+        ng_html.config(routeConfig);
+
+        var nav_con = ng_html.controller("header_nav", function (facToggleMenu, $scope, $timeout, $http, $location) {
+            $scope.custom = false;
+            $scope.hideCro = function (name) {
+                $scope.conName = name;
+                $(".labelx").html($(event.target).html());
+
+                var id = $(event.target).attr("ng-data-id");
+                if ($scope.pre != id) {
+                    $scope.custom = false;
+                    facToggleMenu.func($scope, $scope.pre, $timeout);
+                }
+                $scope.pre = id;
+                $scope.custom = !$scope.custom;
+                facToggleMenu.func($scope, id, $timeout);
+            }
+            $http.post("@Url.Action("NavbarTitles","Home")").success(function (data) {
+                $scope.navs = data.result;
+            });
+        });
+
+        function bodyController($scope) {
+            alert(11);
+        }
+
+        ng_html.controller("html_body", bodyController);
+
+
+    </script>
+</body>
+</html>

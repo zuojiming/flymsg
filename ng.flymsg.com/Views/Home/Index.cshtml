@@ -1,0 +1,71 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+
+        </div>
+        <div id="header_choose" class="navbar-collapse collapse" style="width:100%;">
+            <ul class="nav navbar-nav">
+                <li ng-repeat="nav in navs">
+                    <a ng-data-id="{{nav.name}}" ng-click="hideCro(nav.name)" ng-class="{conAction : conName == nav.name}" ng-bind="nav.title">
+
+                    </a>
+                </li>
+            </ul>
+            <div ng-repeat="nav in navs track by nav.name" id="{{nav.name}}" class="ng-hidea">
+                <div class="tag">
+                    <em></em>
+                    <button ng-repeat="item in nav.items" ng-bind="item.text" ng-click="navClick(nav,item)"></button>
+                </div>
+            </div>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    <div class="banner"></div>
+    <div class="labelx" ng-bind="NavText">&nbsp;</div>
+    <div acbtn>
+        @*<div ng-include="'@Url.Action("Index","Converter")'"></div>*@
+        <div ng-view></div>
+    </div>
+    <hr style="display:none;" />
+    
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var myapp = angular.module("myapp", ['ngRoute', 'ngAnimate']);
+
+    myapp.directive("acbtn", ["$rootScope", function ($rootScope) {
+        var options = {
+            link: function (element, attrs, scope) {
+                //attrs
+            }
+        };
+        return options;
+    }]);
+
+    myapp.config(function ($routeProvider) {
+        $routeProvider.when("/", {
+                controller: ConvertCtrl,
+                templateUrl:"@Url.Action("Index", "Converter")"
+        }).
+        when("/Convert", {
+            redirectTo : "/"
+        }).
+        when("/Format", {
+            controller: FormaterCtrl,
+            templateUrl:"@Url.Action("Index", "Formater")"
+        }).
+        when("/DateAct", {
+            controller: DateActCtrl,
+            templateUrl:"@Url.Action("Index", "DateAct")"
+        }).
+        otherwise({
+            redirectTo:"/"
+        });
+    });
+</script>
+<script src="~/Scripts/pages/index.js"></script>

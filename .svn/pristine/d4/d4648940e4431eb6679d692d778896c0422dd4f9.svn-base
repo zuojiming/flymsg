@@ -1,0 +1,163 @@
+﻿String.prototype.trim2 = function () {
+    return this.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+function F(objid) {
+    return document.getElementById(objid).value;
+}
+
+function G(objid) {
+    return document.getElementById(objid);
+}
+
+var msgA = ["msg1", "msg2", "msg3", "msg4"];
+var c = ["c1", "c2", "c3", "c4"];
+var slen = [50, 20000, 20000, 60];//
+var num = "";//http://www.phpsblogs.com/archives/927
+var isfirst = [0, 0, 0, 0, 0, 0];
+function isEmpty(strVal) {
+    if (strVal == "")
+        return true;
+    else
+        return false;
+}
+
+function isBlank(testVal) {
+    var regVal = /^\s*$/;
+    return (regVal.test(testVal))
+}
+
+function chLen(strVal) {
+    strVal = strVal.trim2();
+    var cArr = strVal.match(/[^\x00-\xff]/ig);
+    return strVal.length + (cArr == null ? 0 : cArr.length);
+}
+
+function check(i) {
+    var iValue = F("c" + i);
+    var iObj = G("msg" + i);
+    var n = (chLen(iValue) > slen[i - 1]);
+    if ((isBlank(iValue) == true) || (isEmpty(iValue) == true) || n == true) {
+        iObj.style.display = "block";
+    } else {
+        iObj.style.display = "none";
+    }
+}
+
+function checkAll() {
+    for (var i = 0; i < msgA.length; i++) {
+        check(i + 1);
+        if (G(msgA[i]).style.display == "none") {
+            continue;
+        } else {
+            alert("ssss");
+            return;
+        }
+    }
+    G("form1").submit();
+}
+
+function clearValue(i) {
+    G(c[i - 1]).style.color = "#000";
+    keyUp();
+    if (isfirst[i] == 0) {
+        G(c[i - 1]).value = "";
+    }
+    isfirst[i] = 1;
+}
+
+function keyUp() {
+    var obj = G("c2");
+    var str = obj.value;
+    str = str.replace(/\r/gi, "");
+    str = str.split("\n");
+    n = str.length;
+    line(n);
+}
+
+function line(n) {
+    var lineobj = G("li");
+    for (var i = 1; i <= n; i++) {
+        if (document.all) {
+            num += i + "\r\n";
+        } else {
+            num += i + "\n";
+        }
+    }
+
+    lineobj.value = num;
+    num = "";
+}
+
+function autoScroll() {
+    var nV = 0;
+    if (!document.all) {
+        nV = G("c2").scrollTop;
+        G("li").scrollTop = nV;
+        setTimeout("autoScroll()", 20);
+    }
+}
+
+if (!document.all) {
+    window.addEventListener("load", autoScroll, false);
+}
+
+$(function () {
+    $("[name=Question]").on("change", function () {
+        //$.ajax({
+        //    url: "/Home/Index",
+        //    type: "post",
+        //    dataType: "json",
+        //    success: function (data) {
+                    
+        //    },
+        //    error: function (a,b,c) { }
+        //});
+        $("form").submit();
+    });
+})
+
+if (CKEDITOR.env.ie && CKEDITOR.env.version < 9)
+    CKEDITOR.tools.enableHtml5Elements(document);
+
+// The trick to keep the editor in the sample quite small
+// unless user specified own height.
+CKEDITOR.config.height = 150;
+CKEDITOR.config.width = 'auto';
+
+var initSample = (function () {
+    var wysiwygareaAvailable = isWysiwygareaAvailable(),
+		isBBCodeBuiltIn = !!CKEDITOR.plugins.get('bbcode');
+
+    return function () {
+        var editorElement = CKEDITOR.document.getById('editor');
+
+        editorElement.setHtml(
+                  'Hello world!\n\n' +
+                  'I\'m an instance of [url=http://ckeditor.com]CKEditor[/url].'
+              );
+
+        // Depending on the wysiwygare plugin availability initialize classic or inline editor.
+        if (wysiwygareaAvailable) {
+            CKEDITOR.replace('editor');
+        } else {
+            editorElement.setAttribute('contenteditable', 'true');
+            CKEDITOR.inline('editor');
+
+            // TODO we can consider displaying some info box that
+            // without wysiwygarea the classic editor may not work.
+        }
+    };
+
+    function isWysiwygareaAvailable() {
+        // If in development mode, then the wysiwygarea must be available.
+        // Split REV into two strings so builder does not replace it :D.
+        if (CKEDITOR.revision == ('%RE' + 'V%')) {
+            return true;
+        }
+
+        return !!CKEDITOR.plugins.get('wysiwygarea');
+    }
+})();
+
+initSample();

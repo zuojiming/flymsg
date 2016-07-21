@@ -1,0 +1,178 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+
+    <script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    
+    
+<form action="/Games/Games/Create" method="post"><input name="__RequestVerificationToken" type="hidden" value="0KlO9_c2BZo-enrKTlbgpULRrFuAPyyRu0fuLJlgcOA_xPrDxoV3qyRqo97EgfVvRN9oy7McPbdXGVeNbXUJTQFUoLJS29Ju-KwGj8gJpZM1" />        <div class="form-horizontal">
+            <h4>Game</h4>
+            <hr />
+            
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Id">主键ID</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field 主键ID must be a number." data-val-required="不可为空" id="Id" name="Id" type="number" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Id" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="SmallImage">列表图片</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="SmallImage" name="SmallImage" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="SmallImage" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="BigImage">推广图片</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="BigImage" name="BigImage" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="BigImage" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="OrderNum">排序顺序</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field 排序顺序 must be a number." data-val-required="不可为空" id="OrderNum" name="OrderNum" type="number" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="OrderNum" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="GamePath">主体文件引用路径</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="GamePath" name="GamePath" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="GamePath" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Anthor">游戏作者</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="Anthor" name="Anthor" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Anthor" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Title">标题</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="Title" name="Title" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="OperationType">操作类型</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="OperationType" name="OperationType" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="OperationType" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Intro">简介</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="Intro" name="Intro" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Intro" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Label">标签</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="Label" name="Label" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Label" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="GameType">游戏类型</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="GameType" name="GameType" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="GameType" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Backup">备注</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-required="不可为空" id="Backup" name="Backup" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Backup" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="IsVisible">是否展示</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field 是否展示 must be a number." data-val-required="不可为空" id="IsVisible" name="IsVisible" type="number" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="IsVisible" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="CreateTime">创建时间</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field 创建时间 must be a date." id="CreateTime" name="CreateTime" type="datetime" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="CreateTime" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="CreateUser">创建用户</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field 创建用户 must be a number." id="CreateUser" name="CreateUser" type="number" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="CreateUser" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="UpdateTime">修改时间</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field 修改时间 must be a date." id="UpdateTime" name="UpdateTime" type="datetime" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="UpdateTime" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label col-md-2" for="UpdateUser">修改用户</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field 修改用户 must be a number." id="UpdateUser" name="UpdateUser" type="number" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="UpdateUser" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+</form>    
+    <div>
+        <a href="/Games/Games">Back to List</a>
+    </div>
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"449ddd0cb45b42319b269fad5dac35a9"}
+</script>
+<script type="text/javascript" src="http://localhost:13321/1360d7eb8eb84e22a7cb033a983a78d9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+using System;
+using System.Collections.Generic;
+using www.flymsg.com.context;
+
+public partial class PageGameBBS : GameBBS
+{
+    public int Id { get; set; }
+    public Nullable<int> GameId { get; set; }
+    public Nullable<int> ParentId { get; set; }
+    public string Title { get; set; }
+    public string Context { get; set; }
+    public string Ip { get; set; }
+    public string Address { get; set; }
+    public string UserName { get; set; }
+    public Nullable<System.DateTime> CreateTime { get; set; }
+    public Nullable<int> CreateUser { get; set; }
+    public Nullable<System.DateTime> UpdateTime { get; set; }
+    public Nullable<int> UpdateUser { get; set; }
+}

@@ -1,0 +1,90 @@
+﻿@model PageIpLog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>IpLog</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Ip)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Ip)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ActionUrl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ActionUrl)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ClientUrl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ClientUrl)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UrlReferrer)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UrlReferrer)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CreateTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateUser)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CreateUser)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UpdateTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateUser)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UpdateUser)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,161 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Game</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                列表图片
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                推广图片
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                排序顺序
+            </dt>
+    
+            <dd>
+                1
+            </dd>
+    
+            <dt>
+                主体文件引用路径
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                游戏作者
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                标题
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                操作类型
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                简介
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                标签
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                游戏类型
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                备注
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                是否展示
+            </dt>
+    
+            <dd>
+                
+                <ul style='list-style:none;'><li style='list-style:none; float:left;' ><input type='radio' name='IsVisible' value='0' id='874aad78-7db6-402a-b806-0d31f8811087' /><label for='874aad78-7db6-402a-b806-0d31f8811087' > 否 </label></li><li style='list-style:none;' ><input type='radio' name='IsVisible' value='1' id='27d0345c-bbf5-4856-a519-edf4b1d26441' /><label for='27d0345c-bbf5-4856-a519-edf4b1d26441' > 是 </label></li></ul>
+            </dd>
+    
+            <dt>
+                创建时间
+            </dt>
+    
+            <dd>
+                2015/11/15 13:49:12
+            </dd>
+    
+            <dt>
+                创建用户
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+            <dt>
+                修改时间
+            </dt>
+    
+            <dd>
+                2015/11/15 13:49:12
+            </dd>
+    
+            <dt>
+                修改用户
+            </dt>
+    
+            <dd>
+                
+            </dd>
+    
+        </dl>
+</div>
+    <p>
+        <a href="/Games/Games/Edit/0">Edit</a> |
+        <a href="/Games/Games">Back to List</a>
+    </p>
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"174a8da4e54b4e3689c76734f229a21e"}
+</script>
+<script type="text/javascript" src="http://localhost:13321/1360d7eb8eb84e22a7cb033a983a78d9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

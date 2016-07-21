@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <conItem name="code_convert" type="convert" title="编码转换" tip="">
+    <item class="" method="" controller="/Converter" con="auto">自动识别</item>
+    <item class="" method="" controller="/Converter" con="GB2312;ASCII;">汉字&lt;=&gt;ANSI(ASC)</item>
+    <item class="" method="" controller="/Converter" con="GB2312;Unicode;">汉字&lt;=&gt;Unicode</item>
+    <item class="" method="" controller="/Converter" con="GB2312;UTF-8;">汉字&lt;=&gt;UTF8</item>
+    <item class="" method="" controller="/Converter/NativeGB2312Convert" con="GB2312;Native;">汉字&lt;=&gt;Native</item>
+    <item class="" method="" controller="/Converter/NativeASCIIConvert" con="ASCII;Native;">ANSI(ASC)&lt;=&gt;Native</item>
+  </conItem>
+  <conItem name="code_format" type="format" title="格式处理" tip="">
+    <item class="" method="" controller="/Format" con="auto">自动识别</item>
+    <item class="" method="" controller="/Format" con="json">JSON格式化</item>
+    <item class="" method="" controller="/Format" con="xml">XML格式化</item>
+    <item class="" method="" controller="/Format" con="url">URL编解码</item>
+  </conItem>
+  <conItem name="date_format" type="convert" title="时间处理" tip="">
+    <item class="" method="" controller="/DateAct" con="date_">时间&lt;=&gt;时间戳</item>
+    <item class="" method="" controller="/DateAct" con="China;USA">天朝&lt;=&gt;美国</item>
+  </conItem>
+</root>

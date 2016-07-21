@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SiteGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Evaluation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="ClientCount" Type="int" />
+          <Property Name="VisitCount" Type="int" />
+          <Property Name="Eat" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="EvaluationDay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="ClientCount" Type="int" />
+          <Property Name="VisitCount" Type="int" />
+          <Property Name="Eat" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="EvaluationMonth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="ClientCount" Type="int" />
+          <Property Name="VisitCount" Type="int" />
+          <Property Name="Eat" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="EvaluationWeek">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="ClientCount" Type="int" />
+          <Property Name="VisitCount" Type="int" />
+          <Property Name="Eat" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IconCss" Type="varchar" MaxLength="200" />
+          <Property Name="SmallImage" Type="varchar" MaxLength="500" />
+          <Property Name="BigImage" Type="varchar" MaxLength="500" />
+          <Property Name="OrderNum" Type="int" />
+          <Property Name="GamePath" Type="varchar" MaxLength="500" />
+          <Property Name="ContentLength" Type="int" />
+          <Property Name="Anthor" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="OperationType" Type="varchar" MaxLength="500" />
+          <Property Name="Intro" Type="varchar" MaxLength="2000" />
+          <Property Name="Label" Type="varchar" MaxLength="200" />
+          <Property Name="GameType" Type="varchar" MaxLength="50" />
+          <Property Name="Backup" Type="varchar" MaxLength="200" />
+          <Property Name="IsVisible" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="GameBBS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Context" Type="varchar" MaxLength="500" />
+          <Property Name="Ip" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="GameType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Intro" Type="varchar" MaxLength="500" />
+          <Property Name="OrderNum" Type="int" />
+          <Property Name="BodyCss" Type="varchar" MaxLength="500" />
+          <Property Name="JavaScript" Type="varchar" MaxLength="500" />
+          <Property Name="Image" Type="varchar" MaxLength="500" />
+          <Property Name="PageAction" Type="varchar" MaxLength="500" />
+          <Property Name="IsVisible" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="IpLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Ip" Type="varchar" MaxLength="50" />
+          <Property Name="ActionUrl" Type="varchar" MaxLength="500" />
+          <Property Name="ClientUrl" Type="varchar" MaxLength="500" />
+          <Property Name="UrlReferrer" Type="varchar" MaxLength="500" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="PageTitleLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+          <Property Name="ToUrl" Type="varchar" MaxLength="500" />
+          <Property Name="OrderNum" Type="int" />
+          <Property Name="IsVisible" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="SiteUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Sex" Type="int" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="ULevel" Type="int" />
+          <Property Name="LoginName" Type="varchar" MaxLength="50" />
+          <Property Name="Passwork" Type="varchar" MaxLength="100" />
+          <Property Name="IsVisible" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SiteGame.dbo.V_GamesOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_GamesOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="ClientCount" Type="int" />
+          <Property Name="VisitCount" Type="int" />
+          <Property Name="Eat" Type="int" />
+          <Property Name="SmallImage" Type="varchar" MaxLength="500" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="BigImage" Type="varchar" MaxLength="500" />
+          <Property Name="OrderNum" Type="int" />
+          <Property Name="Anthor" Type="varchar" MaxLength="50" />
+          <Property Name="GamePath" Type="varchar" MaxLength="500" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="OperationType" Type="varchar" MaxLength="500" />
+          <Property Name="Intro" Type="varchar" MaxLength="2000" />
+          <Property Name="Label" Type="varchar" MaxLength="200" />
+          <Property Name="GameType" Type="varchar" MaxLength="50" />
+          <Property Name="Backup" Type="varchar" MaxLength="200" />
+          <Property Name="IsVisible" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IconCss" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SiteGame.dbo.V_UsersGames' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_UsersGames">
+          <Key>
+            <PropertyRef Name="IpId" />
+          </Key>
+          <Property Name="Id" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IconCss" Type="varchar" MaxLength="200" />
+          <Property Name="SmallImage" Type="varchar" MaxLength="500" />
+          <Property Name="BigImage" Type="varchar" MaxLength="500" />
+          <Property Name="OrderNum" Type="int" />
+          <Property Name="GamePath" Type="varchar" MaxLength="500" />
+          <Property Name="ContentLength" Type="int" />
+          <Property Name="Anthor" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="OperationType" Type="varchar" MaxLength="500" />
+          <Property Name="Intro" Type="varchar" MaxLength="2000" />
+          <Property Name="Label" Type="varchar" MaxLength="200" />
+          <Property Name="GameType" Type="varchar" MaxLength="50" />
+          <Property Name="Backup" Type="varchar" MaxLength="200" />
+          <Property Name="IsVisible" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="IpId" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="f_splitSTR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="s" Type="varchar" Mode="In" />
+          <Parameter Name="split" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="col" Type="varchar" MaxLength="100" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="SiteGameModelStoreContainer">
+          <EntitySet Name="Evaluation" EntityType="Self.Evaluation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EvaluationDay" EntityType="Self.EvaluationDay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EvaluationMonth" EntityType="Self.EvaluationMonth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EvaluationWeek" EntityType="Self.EvaluationWeek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameBBS" EntityType="Self.GameBBS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameType" EntityType="Self.GameType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IpLog" EntityType="Self.IpLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PageTitleLink" EntityType="Self.PageTitleLink" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteUser" EntityType="Self.SiteUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_GamesOrder" EntityType="Self.V_GamesOrder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_GamesOrder].[Id] AS [Id], 
+    [V_GamesOrder].[GameId] AS [GameId], 
+    [V_GamesOrder].[ClientCount] AS [ClientCount], 
+    [V_GamesOrder].[VisitCount] AS [VisitCount], 
+    [V_GamesOrder].[Eat] AS [Eat], 
+    [V_GamesOrder].[SmallImage] AS [SmallImage], 
+    [V_GamesOrder].[Expr1] AS [Expr1], 
+    [V_GamesOrder].[BigImage] AS [BigImage], 
+    [V_GamesOrder].[OrderNum] AS [OrderNum], 
+    [V_GamesOrder].[Anthor] AS [Anthor], 
+    [V_GamesOrder].[GamePath] AS [GamePath], 
+    [V_GamesOrder].[Title] AS [Title], 
+    [V_GamesOrder].[OperationType] AS [OperationType], 
+    [V_GamesOrder].[Intro] AS [Intro], 
+    [V_GamesOrder].[Label] AS [Label], 
+    [V_GamesOrder].[GameType] AS [GameType], 
+    [V_GamesOrder].[Backup] AS [Backup], 
+    [V_GamesOrder].[IsVisible] AS [IsVisible], 
+    [V_GamesOrder].[Name] AS [Name], 
+    [V_GamesOrder].[IconCss] AS [IconCss]
+    FROM [dbo].[V_GamesOrder] AS [V_GamesOrder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_UsersGames" EntityType="Self.V_UsersGames" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_UsersGames].[Id] AS [Id], 
+    [V_UsersGames].[Name] AS [Name], 
+    [V_UsersGames].[IconCss] AS [IconCss], 
+    [V_UsersGames].[SmallImage] AS [SmallImage], 
+    [V_UsersGames].[BigImage] AS [BigImage], 
+    [V_UsersGames].[OrderNum] AS [OrderNum], 
+    [V_UsersGames].[GamePath] AS [GamePath], 
+    [V_UsersGames].[ContentLength] AS [ContentLength], 
+    [V_UsersGames].[Anthor] AS [Anthor], 
+    [V_UsersGames].[Title] AS [Title], 
+    [V_UsersGames].[OperationType] AS [OperationType], 
+    [V_UsersGames].[Intro] AS [Intro], 
+    [V_UsersGames].[Label] AS [Label], 
+    [V_UsersGames].[GameType] AS [GameType], 
+    [V_UsersGames].[Backup] AS [Backup], 
+    [V_UsersGames].[IsVisible] AS [IsVisible], 
+    [V_UsersGames].[CreateTime] AS [CreateTime], 
+    [V_UsersGames].[CreateUser] AS [CreateUser], 
+    [V_UsersGames].[UpdateTime] AS [UpdateTime], 
+    [V_UsersGames].[UpdateUser] AS [UpdateUser], 
+    [V_UsersGames].[UserId] AS [UserId], 
+    [V_UsersGames].[IpId] AS [IpId]
+    FROM [dbo].[V_UsersGames] AS [V_UsersGames]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SiteGameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Evaluation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="ClientCount" Type="Int32" />
+          <Property Name="VisitCount" Type="Int32" />
+          <Property Name="Eat" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IconCss" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SmallImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BigImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNum" Type="Int32" />
+          <Property Name="GamePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ContentLength" Type="Int32" />
+          <Property Name="Anthor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OperationType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Intro" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Label" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="GameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Backup" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsVisible" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GameBBS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Context" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GameType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Intro" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNum" Type="Int32" />
+          <Property Name="BodyCss" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="JavaScript" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PageAction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IsVisible" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="IpLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActionUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ClientUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UrlReferrer" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PageTitleLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ToUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNum" Type="Int32" />
+          <Property Name="IsVisible" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SiteUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="Int32" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ULevel" Type="Int32" />
+          <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Passwork" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsVisible" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_GamesOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="ClientCount" Type="Int32" />
+          <Property Name="VisitCount" Type="Int32" />
+          <Property Name="Eat" Type="Int32" />
+          <Property Name="SmallImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="BigImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNum" Type="Int32" />
+          <Property Name="Anthor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GamePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OperationType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Intro" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Label" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="GameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Backup" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsVisible" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IconCss" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SiteGameEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Evaluation" EntityType="Self.Evaluation" />
+          <EntitySet Name="Game" EntityType="Self.Game" />
+          <EntitySet Name="GameBBS" EntityType="Self.GameBBS" />
+          <EntitySet Name="GameType" EntityType="Self.GameType" />
+          <EntitySet Name="IpLog" EntityType="Self.IpLog" />
+          <EntitySet Name="PageTitleLink" EntityType="Self.PageTitleLink" />
+          <EntitySet Name="SiteUser" EntityType="Self.SiteUser" />
+          <EntitySet Name="V_GamesOrder" EntityType="Self.V_GamesOrder" />
+          <FunctionImport Name="f_splitSTR" IsComposable="true" ReturnType="Collection(String)">
+            <Parameter Name="s" Mode="In" Type="String" />
+            <Parameter Name="split" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="V_UsersGames" EntityType="SiteGameModel.V_UsersGames" />
+          <EntitySet Name="EvaluationDay" EntityType="SiteGameModel.EvaluationDay" />
+          <EntitySet Name="EvaluationMonth" EntityType="SiteGameModel.EvaluationMonth" />
+          <EntitySet Name="EvaluationWeek" EntityType="SiteGameModel.EvaluationWeek" />
+        </EntityContainer>
+        <EntityType Name="V_UsersGames">
+          <Key>
+            <PropertyRef Name="IpId" />
+          </Key>
+          <Property Name="Id" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IconCss" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SmallImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BigImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNum" Type="Int32" />
+          <Property Name="GamePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ContentLength" Type="Int32" />
+          <Property Name="Anthor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OperationType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Intro" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Label" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="GameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Backup" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsVisible" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="IpId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EvaluationDay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="ClientCount" Type="Int32" />
+          <Property Name="VisitCount" Type="Int32" />
+          <Property Name="Eat" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EvaluationMonth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="ClientCount" Type="Int32" />
+          <Property Name="VisitCount" Type="Int32" />
+          <Property Name="Eat" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EvaluationWeek">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="ClientCount" Type="Int32" />
+          <Property Name="VisitCount" Type="Int32" />
+          <Property Name="Eat" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SiteGameModelStoreContainer" CdmEntityContainer="SiteGameEntities">
+          <EntitySetMapping Name="Evaluation">
+            <EntityTypeMapping TypeName="SiteGameModel.Evaluation">
+              <MappingFragment StoreEntitySet="Evaluation">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="ClientCount" ColumnName="ClientCount" />
+                <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+                <ScalarProperty Name="Eat" ColumnName="Eat" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Game">
+            <EntityTypeMapping TypeName="SiteGameModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IconCss" ColumnName="IconCss" />
+                <ScalarProperty Name="SmallImage" ColumnName="SmallImage" />
+                <ScalarProperty Name="BigImage" ColumnName="BigImage" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="GamePath" ColumnName="GamePath" />
+                <ScalarProperty Name="ContentLength" ColumnName="ContentLength" />
+                <ScalarProperty Name="Anthor" ColumnName="Anthor" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="GameType" ColumnName="GameType" />
+                <ScalarProperty Name="Backup" ColumnName="Backup" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameBBS">
+            <EntityTypeMapping TypeName="SiteGameModel.GameBBS">
+              <MappingFragment StoreEntitySet="GameBBS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameType">
+            <EntityTypeMapping TypeName="SiteGameModel.GameType">
+              <MappingFragment StoreEntitySet="GameType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="BodyCss" ColumnName="BodyCss" />
+                <ScalarProperty Name="JavaScript" ColumnName="JavaScript" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="PageAction" ColumnName="PageAction" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IpLog">
+            <EntityTypeMapping TypeName="SiteGameModel.IpLog">
+              <MappingFragment StoreEntitySet="IpLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="ActionUrl" ColumnName="ActionUrl" />
+                <ScalarProperty Name="ClientUrl" ColumnName="ClientUrl" />
+                <ScalarProperty Name="UrlReferrer" ColumnName="UrlReferrer" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PageTitleLink">
+            <EntityTypeMapping TypeName="SiteGameModel.PageTitleLink">
+              <MappingFragment StoreEntitySet="PageTitleLink">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ToUrl" ColumnName="ToUrl" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteUser">
+            <EntityTypeMapping TypeName="SiteGameModel.SiteUser">
+              <MappingFragment StoreEntitySet="SiteUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ULevel" ColumnName="ULevel" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="Passwork" ColumnName="Passwork" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_GamesOrder">
+            <EntityTypeMapping TypeName="SiteGameModel.V_GamesOrder">
+              <MappingFragment StoreEntitySet="V_GamesOrder">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="ClientCount" ColumnName="ClientCount" />
+                <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+                <ScalarProperty Name="Eat" ColumnName="Eat" />
+                <ScalarProperty Name="SmallImage" ColumnName="SmallImage" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="BigImage" ColumnName="BigImage" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="Anthor" ColumnName="Anthor" />
+                <ScalarProperty Name="GamePath" ColumnName="GamePath" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="GameType" ColumnName="GameType" />
+                <ScalarProperty Name="Backup" ColumnName="Backup" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IconCss" ColumnName="IconCss" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="f_splitSTR" FunctionName="SiteGameModel.Store.f_splitSTR" />
+          <EntitySetMapping Name="V_UsersGames">
+            <EntityTypeMapping TypeName="SiteGameModel.V_UsersGames">
+              <MappingFragment StoreEntitySet="V_UsersGames">
+                <ScalarProperty Name="IpId" ColumnName="IpId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="Backup" ColumnName="Backup" />
+                <ScalarProperty Name="GameType" ColumnName="GameType" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Anthor" ColumnName="Anthor" />
+                <ScalarProperty Name="ContentLength" ColumnName="ContentLength" />
+                <ScalarProperty Name="GamePath" ColumnName="GamePath" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="BigImage" ColumnName="BigImage" />
+                <ScalarProperty Name="SmallImage" ColumnName="SmallImage" />
+                <ScalarProperty Name="IconCss" ColumnName="IconCss" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EvaluationDay">
+            <EntityTypeMapping TypeName="SiteGameModel.EvaluationDay">
+              <MappingFragment StoreEntitySet="EvaluationDay">
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Eat" ColumnName="Eat" />
+                <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+                <ScalarProperty Name="ClientCount" ColumnName="ClientCount" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EvaluationMonth">
+            <EntityTypeMapping TypeName="SiteGameModel.EvaluationMonth">
+              <MappingFragment StoreEntitySet="EvaluationMonth">
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Eat" ColumnName="Eat" />
+                <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+                <ScalarProperty Name="ClientCount" ColumnName="ClientCount" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EvaluationWeek">
+            <EntityTypeMapping TypeName="SiteGameModel.EvaluationWeek">
+              <MappingFragment StoreEntitySet="EvaluationWeek">
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Eat" ColumnName="Eat" />
+                <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+                <ScalarProperty Name="ClientCount" ColumnName="ClientCount" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

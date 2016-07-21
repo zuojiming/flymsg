@@ -1,0 +1,154 @@
+﻿@model PageGame
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Game</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SmallImage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SmallImage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BigImage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BigImage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderNum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OrderNum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GamePath)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GamePath)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Anthor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Anthor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OperationType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OperationType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Intro)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Intro)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Label)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Label)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GameType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GameType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Backup)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Backup)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.IsVisible)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.IsVisible)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CreateTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateUser)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CreateUser)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UpdateTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateUser)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UpdateUser)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

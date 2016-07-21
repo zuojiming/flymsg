@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .rate {
+            position:absolute;
+            transform: rotate(25deg);
+            font-size:15px;
+            z-index:2;
+        }
+    </style>
+</head>
+<body>
+    <!--<div style="position:relative; border:1px solid black; width:130px;height:30px; z-index:1;">
+        <img  style="position:absolute; width:132px;height:32px; opacity:0.3; z-index:3;" src="Content/image/IMG_0231.JPG" onclick="CheckCodeInit()" />
+        <div class="rate">aa</div>
+    </div>-->
+    <div id="checkDiv" style="height:30px; width:130px;"></div>
+    <input id="txtCheck" />
+    <button onclick="a()">刷新</button>
+    <div id="xxx"></div>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        CheckCodeInit("checkDiv", "txtCheck", "Content/image/IMG_0231.JPG", CheckOver);
+        function a() {
+            CheckCodeInit("checkDiv", "txtCheck", "Content/image/IMG_0231.JPG", CheckOver);
+        }
+
+        function CheckOver() {
+            document.getElementById("xxx").innerHTML = "验证成功！";
+        }
+        
+        function CheckCodeInit(divId, inputId, imgUrl,callBack) {
+            var $checkDiv = $("#" + divId);
+            $checkDiv.html("");
+            var codeArray = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+            var numArray = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
+            var divHeight = $checkDiv[0].offsetHeight;
+            var checkCode = "";
+
+            for (var i = 0; i < 5; i++) {
+                var s = document.createElement("div");
+                var a = Math.floor(Math.random() * 1000);
+                var rateP = (a >= 500 ? 1 : -1);
+
+                s.style.fontSize = (divHeight * (2 / 3)) + "px";
+                s.style.position = "absolute";
+                s.style.zIndex = "3";
+                s.style.transform = "rotate(" + (a % 60 * rateP) + "deg)";
+                s.style.left = ($checkDiv[0].offsetWidth / 5 * i) + "px";
+                s.style.top = ($checkDiv[0].offsetTop) + "px";
+                
+                if (a <= 500) {//数字
+                    s.innerHTML = a % 10;
+                }
+                else {//字母
+                    s.innerHTML = String.fromCharCode(a % 26 + 65);
+                }
+                $("#" + divId).append(s);
+                checkCode += s.innerHTML;
+            }
+
+            var img_ = document.createElement("img");
+            img_.style.opacity = 0.5;
+            img_.style.position = "absolute";
+            img_.style.top = $checkDiv[0].offsetTop;
+            img_.style.left = $checkDiv[0].offsetLeft;
+            img_.src = imgUrl;
+            img_.width = $checkDiv[0].offsetWidth;
+            img_.height = $checkDiv[0].offsetHeight;
+            img_.style.zIndex = 5;
+            $checkDiv.css("position", "relative").append(img_);
+            
+            $("#" + inputId).unbind("input");
+            $("#" + inputId).bind("input", function () {
+                if (this.value.toLowerCase() == checkCode.toLowerCase()) {
+                    this.ac = true;
+                    callBack();
+                } 
+                else
+                    this.ac = false;
+                //alert(this.ac);
+            });
+        }
+        
+    </script>
+</body>
+
+</html>

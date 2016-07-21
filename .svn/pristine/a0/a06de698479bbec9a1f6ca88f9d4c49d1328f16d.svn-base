@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SiteGameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Evaluation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="GameId" Type="Int32" />
+    <Property Name="ClientCount" Type="Int32" />
+    <Property Name="VisitCount" Type="Int32" />
+    <Property Name="Eat" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SmallImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="BigImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OrderNum" Type="Int32" />
+    <Property Name="GamePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Anthor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OperationType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Intro" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Label" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="GameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Backup" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GameBBS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="GameId" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Context" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GameType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Intro" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OrderNum" Type="Int32" />
+    <Property Name="BodyCss" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="JavaScript" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PageAction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IpLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActionUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ClientUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UrlReferrer" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PageTitleLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ToUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OrderNum" Type="Int32" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SiteUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ULevel" Type="Int32" />
+    <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Passwork" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsVisible" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="SiteGameEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Evaluation" EntityType="Self.Evaluation" />
+    <EntitySet Name="Game" EntityType="Self.Game" />
+    <EntitySet Name="GameBBS" EntityType="Self.GameBBS" />
+    <EntitySet Name="GameType" EntityType="Self.GameType" />
+    <EntitySet Name="IpLog" EntityType="Self.IpLog" />
+    <EntitySet Name="PageTitleLink" EntityType="Self.PageTitleLink" />
+    <EntitySet Name="SiteUser" EntityType="Self.SiteUser" />
+  </EntityContainer>
+</Schema>

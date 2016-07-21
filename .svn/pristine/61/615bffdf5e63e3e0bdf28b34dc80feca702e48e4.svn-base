@@ -1,0 +1,98 @@
+﻿@model www.flymsg.com.Model.ConvertOperation
+@using www.flymsg.com.UrlHelper
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+@Scripts.Render("~/bundles/ckeidtor")
+@Styles.Render("~/Content/ckeidtor")
+
+@*@using (Html.BeginForm("Index","Home",FormMethod.Post))*@
+@using (Html.BeginForm())
+{
+    <div class="header">
+        <div class="logo"><a href="#"><img src="@Url.Image("yx_03.jpg")" alt=""></a></div>
+        <div class="navv">
+            <ul class="navv1">
+                <li>
+                    <a href="#">信息格式</a>
+                    <ul class="navv2">
+                        <li><a href="#">Json</a></li>
+                        <li><a href="#">Xml</a></li>
+                        <li><a href="#">Url参数转码</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">信息编码</a>
+                    <ul class="navv2">
+                        <li><a href="#">UTF8</a></li>
+                        <li><a href="#">ANSI</a></li>
+                        <li><a href="#">GB2312</a></li>
+                        <li><a href="#">Unicode</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">生活常用</a>
+                    <ul class="navv2">
+                        <li><a href="#">货币转换</a></li>
+                        <li><a href="#">斜率换算</a></li>
+                        <li><a href="#">数学大小写</a></li>
+                        <li><a href="#">日期详细信息</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="banner"></div>
+    <div class="content">
+        <select name="SourceTypeStr">
+            <optgroup label="UTF">
+                <option>UTF-8</option>
+                <option>UTF-16</option>
+                <option>UTF-32</option>
+            </optgroup>
+            <optgroup label="汉字">
+                <option>GB2312</option>
+                <option>Unicode</option>
+                <option>ASCII</option>
+            </optgroup>
+        </select>
+        转换至
+        <select name="ResultTypeStr">
+            <optgroup label="UTF">
+                <option>UTF-8</option>
+                <option>UTF-16</option>
+                <option>UTF-32</option>
+            </optgroup>
+            <optgroup label="汉字">
+                <option>GB2312</option>
+                <option>Unicode</option>
+                <option>ASCII</option>
+            </optgroup>
+        </select>
+        <button type="submit">开始转换</button>
+        <div class="content1">
+            <div class="content_top">
+                <div id="ol"><textarea cols="2" rows="10" id="li" disabled style="height:300px;"></textarea></div>
+                <textarea name="SourceContent" cols="60" rows="10" wrap="off" id="c2" onblur="check('2')" onKeyUp="keyUp()" onscroll="G('li').scrollTop=this.scrollTop;" oncontextmenu="return false" style="width:445px; height:300px; margin:0 auto; float:left;">@Model.SourceContent.ToString()</textarea>
+                <textarea name="ResultContent" cols="60" rows="10" wrap="off" id="c2" onblur="check('2')" onKeyUp="keyUp()" onscroll="G('li').scrollTop=this.scrollTop;" oncontextmenu="return false" style="width:445px; height:300px; margin:0 auto; float:left; margin-left:15px;">@(Model.ResultContent.ToString())</textarea>
+                
+                <div class="clear"></div>
+                <em id="msg2"></em>
+            </div>
+            <div class="tip">
+                <a href="#" class="tip1">校验</a>
+                <a href="#" class="tip2">转换</a>
+                <a href="#" class="tip3">格式化</a>
+                <a href="#" class="tip4">另存为</a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/convertInit.js"></script>

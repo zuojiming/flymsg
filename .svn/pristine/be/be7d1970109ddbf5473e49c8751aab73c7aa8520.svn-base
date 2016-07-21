@@ -1,0 +1,23 @@
+
+using System;
+using System.Collections.Generic;
+using www.flymsg.com.context;
+
+public partial class PageGameType : GameType
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Title { get; set; }
+    public Nullable<int> ParentId { get; set; }
+    public string Intro { get; set; }
+    public Nullable<int> OrderNum { get; set; }
+    public string BodyCss { get; set; }
+    public string JavaScript { get; set; }
+    public string Image { get; set; }
+    public string PageAction { get; set; }
+    public Nullable<int> IsVisible { get; set; }
+    public Nullable<System.DateTime> CreateTime { get; set; }
+    public Nullable<int> CreateUser { get; set; }
+    public Nullable<System.DateTime> UpdateTime { get; set; }
+    public Nullable<int> UpdateUser { get; set; }
+}

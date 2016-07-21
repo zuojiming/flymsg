@@ -1,0 +1,39 @@
+﻿@using ng.flymsg.com
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+@Scripts.Render("~/bundles/ckeidtor")
+@Styles.Render("~/Content/ckeidtor")
+@using (Html.BeginForm())
+{
+    <div class="content" style="padding-top:0px;">
+        <div class="content1" style="padding-top:0px;">
+            <div id="container" class="text_box" contenteditable="true" ng-keyup="Act('container')">
+                
+            </div>
+            <div id="result_div" class="result_div" style="margin-top:20px;">
+
+            </div>
+            <input id="txt_watch" style="display:none;" />
+            <div class="tip">
+                <a href="#" class="tip1">校验</a>
+                <a href="#" class="tip2">转换</a>
+                <a href="#" class="tip3">格式化</a>
+                <a href="#" class="tip4">另存为</a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        setInterval(function () {
+            var v_h = $(".banner").height();
+            var w_h = $(window).height();
+            var t_h = $(".tip:last").height();
+            var r_h = w_h - v_h - t_h + 13;
+            var c_h = Math.round((r_h / w_h) * 100);
+            $(".content").css("height", r_h - 150 + "px");
+            $(".text_box,.result_div").css("height", (r_h * 0.34) + "px");
+        }, 300);
+    </script>
+}

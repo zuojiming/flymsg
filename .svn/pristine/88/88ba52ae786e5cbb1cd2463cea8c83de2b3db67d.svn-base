@@ -1,0 +1,8 @@
+﻿body {
+}
+.toolbar {
+        position:absolute; top:1px; width:100%; background-color:aqua; z-index:99;
+    }
+    .toolbar ul {
+        list-style:none; margin-left:0px; margin-right:0px; float:left;
+    }
