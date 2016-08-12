@@ -6,9 +6,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ng.flymsg.com.bll
+namespace ng.flymsg.com.bll.plans
 {
-    public class NormalMsgAction : BaseStringAction
+    public class PlanUser_Custome : BasePlan
     {
         public override Dictionary<string, string> bodyParams
         {

@@ -50,8 +50,17 @@ namespace ng.flymsg.com.App_Start
                 {
                     Encoding pEng = Encoding.GetEncoding(parseEdgs.First()),sEng = Encoding.GetEncoding(item);
                     //input = string.Join("", input.Select(s => HttpUtility.UrlDecode(s.ToString(), Encoding.GetEncoding(item))).ToArray());
-                    input = sEng.GetString(Encoding.Convert(sEng, pEng, sEng.GetBytes(input)));
-                    string a = System.Web.HttpUtility.UrlDecode(input,pEng);
+                    strBytes = Encoding.Convert(sEng, pEng, sEng.GetBytes(input));
+
+                    string s = "大西瓜";
+                    string code = "";
+                    foreach (byte b in Encoding.UTF8.GetBytes(s))
+                    {
+                        code += '%' + b.ToString("X");
+                    }
+                    Console.WriteLine(code);
+
+                    input = pEng.GetString(strBytes);
                     //cEng.GetString();
                     //if (Check(input))
                     return input;

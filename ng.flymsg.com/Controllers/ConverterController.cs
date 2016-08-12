@@ -48,5 +48,10 @@ namespace ng.flymsg.com.Controllers
         {
             return ConvertHelper.NativeASCIIConvert(data);
         }
+
+        [Authorize]
+        public string CheckSysFuncExists() {
+            return "zuoqi";
+        }
     }
 }

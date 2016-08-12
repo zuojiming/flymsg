@@ -40,8 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseStringAction.cs" />
-    <Compile Include="NormalMsgAction.cs" />
+    <Compile Include="impl\TemplateModel.cs" />
+    <Compile Include="ibll\BaseModel.cs" />
+    <Compile Include="iplan\BasePlan.cs" />
+    <Compile Include="iplan\CreaterBase.cs" />
+    <Compile Include="iplan\PlanType.cs" />
+    <Compile Include="plans\Code_Convert.cs" />
+    <Compile Include="plans\PlanCreater.cs" />
+    <Compile Include="plans\PlanUser_Custome.cs" />
+    <Compile Include="plans\Str_To_Int.cs" />
+    <Compile Include="plans\System_Function.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,14 +8,27 @@ using ng.flymsg.com;
 using System.Text;
 using ng.flymsg.com.IBLL;
 using ng.flymsg.com.bll;
+using ng.flymsg.com.bll.plans;
+using ng.flymsg.com.bll.iplan;
+using ng.flymsg.com.Filters;
 
 namespace ng.flymsg.com.Controllers
 {
+    [Authentica]
     public class HomeController : Controller
     {
+        public CreaterBase<BasePlan> QueryerCreater
+        {
+            get
+            {
+                return new PlanCreater();
+            }
+        }
+
+        [Authentica(IsCheck =false)]
         public ActionResult Index()
         {
-            BaseStringAction action = new NormalMsgAction();
+            BasePlan action = new PlanUser_Custome();
             action.temp = @"\$name\$ is $name$";
             action.bodyParams = new Dictionary<string, string> {
                 ["name"] = "zuoqi"

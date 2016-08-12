@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ng.flymsg.com.bll
 {
-    public abstract class BaseStringAction : IMsgAction<string>
+    public abstract class BasePlan : IMsgAction<string>
     {
         public abstract Dictionary<string, string> bodyParams { get; set; }
 
